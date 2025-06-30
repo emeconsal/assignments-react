@@ -1,6 +1,4 @@
-import styled from "styled-components";
+import styles from "./List.module.css";
+import { PropsWithChildren } from "react";
 
-export const List = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
+export const List = ({children}: PropsWithChildren) => <div className={styles.list}>{children}</div>

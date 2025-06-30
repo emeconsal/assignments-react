@@ -1,0 +1,15 @@
+@import "../node_modules/@radix-ui/colors/olive.css";
+@import "../node_modules/@radix-ui/colors/grass.css";
+@import "../node_modules/@radix-ui/colors/black-alpha.css";
+@import '../../node_modules/.pnpm/normalize.css@8.0.1/node_modules/normalize.css/normalize.css';
+
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
