@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
 
-
-
 type FooterProps = {
     todoItems?: number;
     doneItems?: number;

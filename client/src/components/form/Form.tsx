@@ -1,6 +1,6 @@
 import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
-import styles from './Form.module.css'
+import styles from "./Form.module.css";
 
 import { Input } from "./Input";
 
