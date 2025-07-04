@@ -1,12 +1,8 @@
 import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
-import styled from "styled-components";
+import styles from "./Form.module.css";
 
 import { Input } from "./Input";
-
-const FormStyled = styled.form`
-    display: flex;
-`;
 
 type FormProps = {
     initialValue: string;
@@ -20,7 +16,8 @@ export const Form = (props: FormProps) => {
     const [inputValue, setInputValue] = useState(initialValue);
 
     return (
-        <FormStyled
+        <form
+            className={styles.form}
             onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit(inputValue);
@@ -36,6 +33,6 @@ export const Form = (props: FormProps) => {
             <button type={"reset"}>
                 <Cross1Icon />
             </button>
-        </FormStyled>
+        </form>
     );
 };

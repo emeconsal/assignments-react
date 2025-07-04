@@ -1,17 +1,10 @@
-import styled from "styled-components";
+import styles from "./Layout.module.css";
 
-export const Layout = styled.main`
-    display: flex;
-    flex-direction: column;
+type LayoutProps = {
+    children: React.ReactNode;
+};
 
-    width: 100%;
-    max-width: 600px;
-    min-height: 50vh;
-    margin: 0 30px;
-    padding: 20px;
-
-    background-color: rgb(255, 255, 255);
-    border: 1px solid;
-    border-color: ${(props) => props.theme.colors.olive6};
-    border-radius: 5px;
-`;
+export const Layout = (props: LayoutProps) => {
+    const { children } = props;
+    return <main className={styles.layout}>{children}</main>;
+};

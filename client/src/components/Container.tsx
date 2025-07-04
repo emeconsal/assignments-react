@@ -1,12 +1,10 @@
-import styled from "styled-components";
+import styles from "./Container.module.css";
 
-export const Container = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+type ContainerProps = {
+    children: React.ReactNode;
+};
 
-    width: 100vw;
-    height: 100vh;
-
-    background-color: ${(props) => props.theme.colors.olive1};
-`;
+export const Container = (props: ContainerProps) => {
+    const { children } = props;
+    return <div className={styles.container}>{children}</div>;
+};

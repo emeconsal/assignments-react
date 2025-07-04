@@ -1,17 +1,8 @@
 import { Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
 import React from "react";
-import styled from "styled-components";
+import styles from "./ListItem.module.css";
 
 import { Checkbox } from "./Checkbox";
-
-const StyledDiv = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-const Label = styled.label`
-    margin-left: 15px;
-`;
 
 export type LiteeItemProp = {
     label: string;
@@ -25,15 +16,15 @@ export const ListItem = (props: LiteeItemProp) => {
     const { label, isDone, onItemLabelEdit, onItemDoneToggle, onItemDelete } = props;
 
     return (
-        <StyledDiv>
+        <div className={styles.item}>
             <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
-            <Label>{label}</Label>
+            <label className={styles.label}>{label}</label>
             <button>
                 <TrashIcon />
             </button>
             <button onClick={() => onItemDelete()}>
                 <Pencil1Icon />
             </button>
-        </StyledDiv>
+        </div>
     );
 };

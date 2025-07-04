@@ -1,24 +1,6 @@
 import { PlusIcon } from "@radix-ui/react-icons";
 import React from "react";
-import styled from "styled-components";
-
-const StyledDiv = styled.header`
-    display: flex;
-
-    button {
-        all: unset;
-
-        width: 25px;
-        height: 25px;
-
-        background-color: ${(props) => props.theme.colors.grass9};
-        border: 1px solid;
-        border-color: ${(props) => props.theme.colors.olive9};
-        border-radius: 50%;
-
-        color: #fff;
-    }
-`;
+import styles from "./Header.module.css";
 
 type HeaderProps = {
     children: React.ReactNode;
@@ -29,11 +11,11 @@ export const Header = (props: HeaderProps) => {
     const { children } = props;
 
     return (
-        <StyledDiv>
+        <header className={styles.header}>
             <h1>{children}</h1>
-            <button>
+            <button className={styles.button}>
                 <PlusIcon />
             </button>
-        </StyledDiv>
+        </header>
     );
 };

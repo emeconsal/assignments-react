@@ -16,11 +16,9 @@
         "@radix-ui/colors": "^3.0.0",
         "@radix-ui/react-checkbox": "^1.3.2",
         "@radix-ui/react-icons": "^1.3.2",
+        "normalize.css": "^8.0.1",
         "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "styled-components": "^6.1.11",
-        "styled-normalize": "^8.1.1",
-        "styled-reset": "^4.5.2"
+        "react-dom": "^19.1.0"
     },
     "devDependencies": {
         "@storybook/addon-actions": "^9.0.8",
@@ -30,7 +28,6 @@
         "@types/node": "^24.0.3",
         "@types/react": "^19.1.8",
         "@types/react-dom": "^19.1.6",
-        "@types/styled-components": "^5.1.34",
         "@typescript-eslint/eslint-plugin": "^8.34.1",
         "@typescript-eslint/parser": "^8.34.1",
         "@vitejs/plugin-react": "^4.5.2",

@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-const InputStyled = styled.input``;
+import styles from "./Input.module.css";
 
 type InputProps = {
     value: string;
@@ -11,7 +9,8 @@ export const Input = (props: InputProps) => {
     const { value, onValueChange } = props;
 
     return (
-        <InputStyled
+        <input
+            className={styles.input}
             value={value}
             onChange={(e) => {
                 const value = e.currentTarget.value;

@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styles from "./List.module.css";
 
-export const List = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
+type ListProps = {
+    children: React.ReactNode;
+};
+
+export const List = (props: ListProps) => {
+    const { children } = props;
+    return <div className={styles.list}>{children}</div>;
+};

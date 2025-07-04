@@ -1,12 +1,8 @@
 import type { Parameters, Preview, Decorator } from "@storybook/react";
-import { ThemeProvider } from "../src/components/providers/ThemeProvider";
+import "../src/global.css";
 
 export const decorators: Decorator[] = [
-    (Story) => (
-        <ThemeProvider>
-            <Story />
-        </ThemeProvider>
-    ),
+    (Story) => <Story />
 ];
 
 export const parameters: Parameters = {
