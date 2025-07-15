@@ -28,7 +28,8 @@ export const useItems = () => {
         });
     };
     const onItemDoneToggle = async (id: number) => {
-        console.log("onItemDoneToggle", id);
+        await toggleItemDone(id);
+        setItems(items.map((item) => (item.id === id ? { ...item, isDone: !item.isDone } : item)));
     };
     const onItemLabelEdit = (id: number, label: string) => {
         setItems(items.map((item) => (item.id === id ? { ...item, label } : item)));
