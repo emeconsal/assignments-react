@@ -1,17 +1,35 @@
 .header {
     display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
 }
 
 .button {
     all: unset;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
 
-    width: 25px;
-    height: 25px;
-
-    background-color: var(--grass-9);
+    background-color: var(--grass-5);
     border: 1px solid;
     border-color: var(--olive-9);
     border-radius: 50%;
+    color: var(--olive-9);
+    transition:
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+.button:hover {
+    background-color: var(--grass-10);
     color: #fff;
 }
