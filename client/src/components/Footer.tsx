@@ -11,8 +11,8 @@ export const Footer = (props: FooterProps) => {
 
     return (
         <footer className={styles.footer}>
-            Todo: {todoItems ?? 0}
-            Done: {doneItems ?? 0}
+            <span>Todo: {todoItems ?? 0}</span>
+            <span>Done: {doneItems ?? 0}</span>
         </footer>
     );
 };
