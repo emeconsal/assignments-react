@@ -11,7 +11,7 @@
     height: 45px;
     cursor: pointer;
 
-    background-color: var(--grass-5);
+    background-color: #fff;
     border: 1px solid;
     border-color: var(--olive-9);
     border-radius: 50%;
@@ -30,6 +30,6 @@
     }
 }
 .button:hover {
-    background-color: var(--grass-10);
-    color: #fff;
+    background-color: var(--grass-5);
+    color: var(--olive-9);
 }
