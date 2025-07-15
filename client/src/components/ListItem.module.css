@@ -1,8 +1,47 @@
 .item {
     display: flex;
     align-items: center;
+    min-height: 27px;
+
+    justify-content: space-between;
+    gap: 1rem;
+}
+.item:hover .buttons {
+    visibility: visible;
+    opacity: 1;
+    transition:
+        visibility 0.2s ease-in-out,
+        opacity 0.2s ease-in-out;
+}
+.buttons {
+    visibility: hidden;
+    opacity: 0;
+    gap: 1rem;
+
+    display: flex;
+    button {
+        all: unset;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid;
+        border-color: #000;
+        border-radius: 50%;
+        color: #000;
+        transition:
+            background-color 0.2s ease-in-out,
+            color 0.2s ease-in-out;
+    }
+    button:hover {
+        background-color: var(--grass-5);
+    }
 }
 
 .label {
     margin-left: 15px;
+    flex: 1;
 }
