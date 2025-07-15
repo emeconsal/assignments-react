@@ -7,24 +7,26 @@ import { ListItem } from "./components/ListItem";
 import "./global.css";
 import { Item, useItems } from "./hooks/useItems";
 export const App = () => {
-    const { data, isLoading, error } = useItems();
+    const { items, isLoading, error, onItemDelete, onItemDoneToggle, onItemLabelEdit } = useItems();
     return (
         <Container>
             <Layout>
                 <Header onItemAdd={() => console.warn("unimplemented")}>To Do app</Header>
                 <List>
-                    {data?.map((item: Item) => (
+                    {isLoading && <div>Loading...</div>}
+                    {error && <div>Error: {error.message}</div>}
+                    {items?.map((item: Item) => (
                         <ListItem
                             key={item.id}
                             label={item.label}
                             isDone={item.isDone}
-                            onItemLabelEdit={() => console.warn("unimplemented")}
-                            onItemDoneToggle={() => console.warn("unimplemented")}
-                            onItemDelete={() => console.warn("unimplemented")}
+                            onItemLabelEdit={(label: string) => onItemLabelEdit(item.id, label)}
+                            onItemDoneToggle={() => onItemDoneToggle(item.id)}
+                            onItemDelete={() => onItemDelete(item.id)}
                         />
                     ))}
                 </List>
-                <Footer todoItems={data?.length} doneItems={data?.filter((item: Item) => item.isDone).length} />
+                <Footer todoItems={items?.length} doneItems={items?.filter((item: Item) => item.isDone).length} />
             </Layout>
         </Container>
     );
