@@ -5,24 +5,31 @@ import { Layout } from "./components/Layout";
 import { List } from "./components/List";
 import { ListItem } from "./components/ListItem";
 import "./global.css";
+import { useCreateItem } from "./hooks/useCreateItem";
+import { useDeleteItem } from "./hooks/useDeleteItem";
 import { Item, useItems } from "./hooks/useItems";
+import { useUpdateItem } from "./hooks/useUpdateItem";
 export const App = () => {
-    const { items, isLoading, error, onItemDelete, onItemDoneToggle, onItemLabelEdit } = useItems();
+    const { items, isLoading, error } = useItems();
+    const { updateItemDone, updateItem } = useUpdateItem();
+    const { deleteItem } = useDeleteItem();
+    const { createItem } = useCreateItem();
+
     return (
         <Container>
             <Layout>
-                <Header onItemAdd={() => console.warn("unimplemented")}>To Do app</Header>
+                <Header onItemAdd={createItem}>To Do app</Header>
                 <List>
                     {isLoading && <div>Loading...</div>}
                     {error && <div>Error: {error.message}</div>}
-                    {items?.map((item: Item) => (
+                    {items?.map(({ id, label, isDone }: Item) => (
                         <ListItem
-                            key={item.id}
-                            label={item.label}
-                            isDone={item.isDone}
-                            onItemLabelEdit={(label: string) => onItemLabelEdit(item.id, label)}
-                            onItemDoneToggle={() => onItemDoneToggle(item.id)}
-                            onItemDelete={() => onItemDelete(item.id)}
+                            key={id}
+                            label={label}
+                            isDone={isDone}
+                            onItemLabelEdit={(label: string) => updateItem({ id, updatedFields: { label } })}
+                            onItemDoneToggle={() => updateItemDone(id)}
+                            onItemDelete={() => deleteItem(id)}
                         />
                     ))}
                 </List>
