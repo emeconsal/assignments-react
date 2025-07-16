@@ -1,0 +1,35 @@
+button {
+    all: unset;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid;
+    border-radius: 50%;
+    transition:
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+}
+button:hover {
+    background-color: var(--grass-5);
+}
+
+.primary {
+    color: #000;
+    border-color: #000;
+}
+
+.plus {
+    width: 45px;
+    height: 45px;
+    border-color: var(--olive-9);
+    color: var(--olive-9);
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+}

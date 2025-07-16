@@ -1,5 +1,6 @@
 import { PlusIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
+import { Button } from "./Button/Button";
 import styles from "./Header.module.css";
 import { Form } from "./form";
 
@@ -16,9 +17,9 @@ export const Header = (props: HeaderProps) => {
         <header className={styles.header}>
             <h1>{children}</h1>
             {!isFormOpen && (
-                <button className={styles.button} onClick={() => setIsFormOpen(true)}>
+                <Button onClick={() => setIsFormOpen(true)} variant="plus">
                     <PlusIcon />
-                </button>
+                </Button>
             )}
             {isFormOpen && (
                 <Form
