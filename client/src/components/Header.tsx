@@ -26,6 +26,7 @@ export const Header = (props: HeaderProps) => {
                     initialValue=""
                     onSubmit={(label) => {
                         onItemAdd(label);
+                        setIsFormOpen(false);
                     }}
                     onCancel={() => setIsFormOpen(false)}
                 />
