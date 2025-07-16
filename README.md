@@ -2,7 +2,7 @@
 
 Please, read following instructions and let us know if anything is not clear.
 
-Reasoning and Approach => [here](DOCUMENTATION.md)
+# Reasoning and Approach => [here](DOCUMENTATION.md)
 
 ## 📋 General Rules and Requirements
 
