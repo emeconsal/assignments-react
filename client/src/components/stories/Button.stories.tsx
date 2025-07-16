@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { CheckIcon, PlusIcon, TrashIcon } from "@radix-ui/react-icons";
-import { Button } from "../Button/Button";
+import { Button } from "../button/Button";
 
 const meta = {
     title: "Button",

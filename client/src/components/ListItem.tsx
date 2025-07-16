@@ -2,7 +2,7 @@ import { Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import styles from "./ListItem.module.css";
 
-import { Button } from "./Button/Button";
+import { Button } from "./button/Button";
 import { Checkbox } from "./Checkbox";
 import { Form } from "./form";
 

@@ -1,8 +1,8 @@
 import { PlusIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
-import { Button } from "./Button/Button";
-import styles from "./Header.module.css";
+import { Button } from "./button/Button";
 import { Form } from "./form";
+import styles from "./Header.module.css";
 
 type HeaderProps = {
     children: React.ReactNode;

@@ -2,7 +2,7 @@ import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import styles from "./Form.module.css";
 
-import { Button } from "../Button/Button";
+import { Button } from "../button/Button";
 import { Input } from "./Input";
 
 type FormProps = {
