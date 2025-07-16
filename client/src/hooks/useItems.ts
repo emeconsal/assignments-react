@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
-import { deleteItem, toggleItemDone } from "../services/ItemServices";
+import { CONSTANTS } from "../constants";
 import { prepareItems } from "../utils/prepareItems";
 
 export interface Item {
@@ -11,28 +10,18 @@ export interface Item {
 }
 
 export const useItems = () => {
-    const [items, setItems] = useState<Item[]>([]);
-    const { data, isLoading, error } = useQuery({
+    const response = useQuery({
         queryKey: ["items"],
-        queryFn: () => fetch("http://localhost:3000/items").then((res) => res.json()),
+        queryFn: async () => {
+            const response = await fetch(`${CONSTANTS.BASE_URL}/items`);
+            if (!response.ok) {
+                throw new Error("Failed to fetch items");
+            }
+            return (await response.json()) as Item[];
+        },
     });
-    useEffect(() => {
-        if (data) {
-            setItems(prepareItems(data));
-        }
-    }, [data]);
+    const { data } = response;
+    const items = prepareItems(data ?? []);
 
-    const onItemDelete = (id: number) => {
-        deleteItem(id).then(() => {
-            setItems(items.filter((item) => item.id !== id));
-        });
-    };
-    const onItemDoneToggle = async (id: number) => {
-        await toggleItemDone(id);
-        setItems(items.map((item) => (item.id === id ? { ...item, isDone: !item.isDone } : item)));
-    };
-    const onItemLabelEdit = (id: number, label: string) => {
-        setItems(items.map((item) => (item.id === id ? { ...item, label } : item)));
-    };
-    return { items, isLoading, error, onItemDelete, onItemDoneToggle, onItemLabelEdit };
+    return { items, ...response };
 };
