@@ -3,8 +3,8 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "../Footer";
 import { Header } from "../Header";
 import { Layout } from "../Layout";
-import { List } from "../List";
-import { ListItem } from "../ListItem";
+import { List } from "../list/List";
+import { ListItem } from "../list/ListItem";
 
 const meta = {
     title: "Layout",
