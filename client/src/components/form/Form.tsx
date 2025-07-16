@@ -28,12 +28,14 @@ export const Form = (props: FormProps) => {
             }}
         >
             <Input value={inputValue} onValueChange={(value) => setInputValue(value)} />
-            <Button onClick={() => onSubmit(inputValue)} variant="primary">
-                <CheckIcon />
-            </Button>
-            <Button onClick={() => onCancel()} variant="primary">
-                <Cross1Icon />
-            </Button>
+            <div className={styles.buttonsContainer}>
+                <Button onClick={() => onSubmit(inputValue)} variant="primary">
+                    <CheckIcon />
+                </Button>
+                <Button onClick={() => onCancel()} variant="primary">
+                    <Cross1Icon />
+                </Button>
+            </div>
         </form>
     );
 };

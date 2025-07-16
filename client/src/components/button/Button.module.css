@@ -20,6 +20,7 @@ button:hover {
 .primary {
     color: #000;
     border-color: #000;
+    border-radius: 0.5rem;
 }
 
 .plus {
